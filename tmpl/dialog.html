@@ -1,45 +1,51 @@
 <md-dialog aria-label="Mango (Fruit)">
  <md-content class="md-padding">
+ <h1>
+ Data Entry</h1>
  <form name="userForm">
  <div layout layout-sm="column">
  <md-input-container flex>
  <label>
- First Name</label>
- <input ng-model="user.firstName" placeholder="Placeholder text">
+ Temperature</label>
+ <input ng-model="sample.temperature" placeholder="Placeholder text">
+ </md-input-container>
+  <md-input-container flex>
+ <label>
+ Width</label>
+ <input ng-model="sample.width">
  </md-input-container>
  <md-input-container flex>
  <label>
- Last Name</label>
+ Depth</label>
  <input ng-model="theMax">
  </md-input-container>
  </div>
  <md-input-container flex>
  <label>
- Address</label>
- <input ng-model="user.address">
+ pH</label>
+ <input ng-model="sample.pH">
  </md-input-container>
  <div layout layout-sm="column">
  <md-input-container flex>
  <label>
- City</label>
- <input ng-model="user.city">
+ Dissolved Oxygen</label>
+ <input ng-model="sample.dissolvedOxygen">
  </md-input-container>
  <md-input-container flex>
  <label>
- State</label>
- <input ng-model="user.state">
+ Conductivity</label>
+ <input ng-model="sample.conductivity">
  </md-input-container>
  <md-input-container flex>
  <label>
- Postal Code</label>
- <input ng-model="user.postalCode">
+ Oxydation Reduction Potential</label>
+ <input ng-model="sample.ORP">
  </md-input-container>
  </div>
  <md-input-container flex>
  <label>
- Biography</label>
- <textarea ng-model="user.biography" columns="1" md-maxlength="150">
- </textarea>
+ Discharge</label>
+ <input ng-model="sample.discharge">
  </md-input-container>
  </form>
  </md-content>
