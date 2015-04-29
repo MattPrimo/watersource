@@ -7,7 +7,7 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
  	$scope.menu = [
     {
       link : '',
-      title: 'Dashboard',
+      title: 'List of Samples',
       icon: 'dashboard'
     }
   ];
