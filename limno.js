@@ -92,8 +92,8 @@ app.directive('userAvatar', function() {
 
 app.factory('Sample', ['$resource',
   function($resource){
-    return $resource('/api/samples/:sampleId', {}, {
-      query: {method:'GET', params:{sampleId:''}, isArray:true}
+    return $resource('samples/:sampleId.json', {}, {
+      query: {method:'GET', params:{sampleId:'samples'}, isArray:true}
     });
   }]);
 
