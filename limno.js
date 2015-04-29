@@ -1,6 +1,6 @@
-var app = angular.module('StarterApp', ['ngMaterial', 'ngMdIcons']);
+var app = angular.module('StarterApp', ['ngMaterial', 'ngMdIcons', 'ngResource']);
 
-app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog){
+app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', 'Sample', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, Sample){
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };
@@ -23,62 +23,8 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
       icon: 'settings'
     }
   ];
-  $scope.activity = [
-      {
-        what: 'Cromwell Lake',
-        who: 'Outlet Stream',
-        when: 'October 2013',
-        notes: "Protected lake; within Montreal University field station"
-      },
-      {
-        what: 'Cromwell Lake',
-        who: 'Inlet Stream',
-        when: 'October 2013',
-        notes: "Protected Lake; within Montreal University field station"
-      },
-      {
-        what: 'Bleu Lake',
-        who: 'Outlet Stream',
-        when: 'October 2013',
-        notes: "Unprotected Lake; municipal"
-      },
-      {
-        what: 'Bleu Lake',
-        who: 'Inlet Stream',
-        when: 'October 2013',
-        notes: "Unprotected Lake; municipal"
-      },
-      {
-           what: 'Morency Lake',
-        who: 'Inlet Stream',
-        when: 'October 2013',
-        notes: "Unprotected Lake; municipal"
-      },
-      {
-           what: 'Maille Lake',
-        who: 'Outlet Stream',
-        when: 'October 2013',
-        notes: "Unprotected Lake; municipal"
-      },
-      {
-              what: 'Ours Lake',
-        who: 'Stream',
-        when: 'October 2013',
-        notes: "Unprotected Lake; municipal"
-      },
-      {
-           what: 'Coeur Lake',
-        who: 'Stream',
-        when: 'October 2013',
-        notes: "Unprotected Lake; municipal"
-      },
-      {
-        what: 'Pin Rouge Lake',
-        who: 'Stream',
-        when: 'October 2013',
-        notes: "Unprotected Lake; municipal"
-      },
-    ];
+
+  $scope.activity = Sample.query();
   $scope.alert = '';
   $scope.showListBottomSheet = function($event) {
     $scope.alert = '';
@@ -98,7 +44,13 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
       targetEvent: ev,
     })
     .then(function(answer) {
-      $scope.alert = 'You said the information was "' + answer + '".';
+      var newSample = new Sample({
+        what: "Collin Man",
+        who: "Stalling Fan",
+        when: "October 2013",
+        notes: "Bitches"
+      });
+      newSample.$save();
     }, function() {
       $scope.alert = 'You cancelled the dialog.';
     });
@@ -138,12 +90,12 @@ app.directive('userAvatar', function() {
   };
 });
 
-// app.factory('sample', ['$resource',
-//   function($resource){
-//     return $resource('samples/:sampleId.json', {}, {
-//       query: {method:'GET', params:{sampleId:'samples'}, isArray:true}
-//     });
-//   }]);
+app.factory('Sample', ['$resource',
+  function($resource){
+    return $resource('/api/samples/:sampleId', {}, {
+      query: {method:'GET', params:{sampleId:''}, isArray:true}
+    });
+  }]);
 
 app.config(function($mdThemingProvider) {
   var customBlueMap = 		$mdThemingProvider.extendPalette('blue', {

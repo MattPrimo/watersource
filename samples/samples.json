@@ -1,0 +1,57 @@
+[
+  {
+    "what": "Cromwell Lake",
+    "who": "Outlet Stream",
+    "when": "October 2013",
+    "notes": "Protected lake; within Montreal University field station"
+  },
+  {
+    "what": "Cromwell Lake",
+    "who": "Inlet Stream",
+    "when": "October 2013",
+    "notes": "Protected Lake; within Montreal University field station"
+  },
+  {
+    "what": "Bleu Lake",
+    "who": "Outlet Stream",
+    "when": "October 2013",
+    "notes": "Unprotected Lake; municipal"
+  },
+  {
+    "what": "Bleu Lake",
+    "who": "Inlet Stream",
+    "when": "October 2013",
+    "notes": "Unprotected Lake; municipal"
+  },
+  {
+    "what": "Morency Lake",
+    "who": "Inlet Stream",
+    "when": "October 2013",
+    "notes": "Unprotected Lake; municipal"
+  },
+  {
+    "what": "Maille Lake",
+    "who": "Outlet Stream",
+    "when": "October 2013",
+    "notes": "Unprotected Lake; municipal"
+  },
+  {
+    "what": "Ours Lake",
+    "who": "Stream",
+    "when": "October 2013",
+    "notes": "Unprotected Lake; municipal"
+  },
+  {
+       "what": "Coeur Lake",
+    "who": "Stream",
+    "when": "October 2013",
+    "notes": "Unprotected Lake; municipal"
+  },
+  {
+    "what": "Pin Rouge Lake",
+    "who": "Stream",
+    "when": "October 2013",
+    "notes": "Unprotected Lake; municipal"
+  }
+]
+
