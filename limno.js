@@ -146,7 +146,7 @@ app.directive('userAvatar', function() {
 //   }]);
 
 app.config(function($mdThemingProvider) {
-  var customBlueMap = 		$mdThemingProvider.extendPalette('green', {
+  var customBlueMap = 		$mdThemingProvider.extendPalette('blue', {
     'contrastDefaultColor': 'light',
     'contrastDarkColors': ['50'],
     '50': 'ffffff'
