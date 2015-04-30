@@ -11,7 +11,7 @@ import (
 
 type Sample struct {
 	Id              int     `json:"id"`
-	Title           string  `json:"title"`
+	Location        string  `json:"location"`
 	Source          string  `json:"source"`
 	Date            string  `json:"date"`
 	Notes           string  `json:"notes"`
@@ -28,9 +28,9 @@ type Sample struct {
 var idCounter = 1
 var samples = []Sample{
 	{
-		Title:       "Lake Cromwell",
-		Source:      "Inlet Stream",
-		Description: "Protected lake within the Montreal University field station",
+		Location: "Lake Cromwell",
+		Source:   "Inlet Stream",
+		Notes:    "Protected lake within the Montreal University field station",
 	},
 }
 
