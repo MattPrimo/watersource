@@ -5,6 +5,7 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 )
 
@@ -141,6 +142,6 @@ func main() {
 
 	http.Handle("/", http.FileServer(http.Dir("./")))
 
-	log.Println("Listening on 3030")
-	http.ListenAndServe(":3030", nil)
+	log.Println("Listening on " + os.Getenv("PORT"))
+	http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 }
