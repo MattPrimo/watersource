@@ -26,23 +26,7 @@ type Sample struct {
 }
 
 var idCounter = 1
-var samples = []Sample{
-	{
-		Id:              0,
-		Title:           "Bear Lake Site",
-		Location:        "Bear Lake",
-		Date:            "April 26th",
-		Notes:           "Bear Lake was cool mate.",
-		Temperature:     12,
-		Width:           14.5,
-		Depth:           14.5,
-		PH:              14.5,
-		DissolvedOxygen: 14.5,
-		Conductivity:    14.5,
-		ORP:             14.5,
-		Discharge:       14.5,
-	},
-}
+var samples []Sample
 
 func SamplesHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
