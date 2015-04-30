@@ -43,13 +43,8 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
       templateUrl: 'tmpl/dialog.html',
       targetEvent: ev,
     })
-    .then(function(answer) {
-      var newSample = new Sample({
-        what: "Collin Man",
-        who: "Stalling Fan",
-        when: "October 2013",
-        notes: "Bitches"
-      });
+    .then(function(sample) {
+      var newSample = new Sample(sample);
       newSample.$save();
     }, function() {
       $scope.alert = 'You cancelled the dialog.';
@@ -72,6 +67,7 @@ app.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet) {
 });
 
 function DialogController($scope, $mdDialog) {
+  $scope.sample={}
   $scope.hide = function() {
     $mdDialog.hide();
   };
@@ -79,7 +75,7 @@ function DialogController($scope, $mdDialog) {
     $mdDialog.cancel();
   };
   $scope.answer = function(answer) {
-    $mdDialog.hide(answer);
+    $mdDialog.hide($scope.sample);
   };
 };
 
@@ -92,8 +88,8 @@ app.directive('userAvatar', function() {
 
 app.factory('Sample', ['$resource',
   function($resource){
-    return $resource('samples/:sampleId.json', {}, {
-      query: {method:'GET', params:{sampleId:'samples'}, isArray:true}
+    return $resource('/api/samples/:sampleId', {}, {
+      query: {method:'GET', params:{sampleId:''}, isArray:true}
     });
   }]);
 
