@@ -12,7 +12,7 @@ import (
 type Sample struct {
 	Id              int     `json:"id"`
 	Title           string  `json:"title"`
-	Location        string  `json:"location"`
+	Source          string  `json:"source"`
 	Date            string  `json:"date"`
 	Notes           string  `json:"notes"`
 	Temperature     int     `json:"temperature"`
@@ -26,7 +26,13 @@ type Sample struct {
 }
 
 var idCounter = 1
-var samples []Sample
+var samples = []Sample{
+	{
+		Title:       "Lake Cromwell",
+		Source:      "Inlet Stream",
+		Description: "Protected lake within the Montreal University field station",
+	},
+}
 
 func SamplesHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
