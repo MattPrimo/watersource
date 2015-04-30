@@ -24,6 +24,9 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
     }
   ];
 
+  $scope.data = {};
+  $scope.data.selectedIndex = 0;
+
   $scope.activity = Sample.query();
   $scope.alert = '';
   $scope.showListBottomSheet = function($event) {
