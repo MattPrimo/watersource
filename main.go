@@ -9,20 +9,37 @@ import (
 )
 
 type Sample struct {
-	Id    int    `json:"id"`
-	What  string `json:"what"`
-	Who   string `json:"who"`
-	When  string `json:"when"`
-	Notes string `json:"notes"`
+	Id              int     `json:"id"`
+	Title           string  `json:"title"`
+	Location        string  `json:"location"`
+	Date            string  `json:"date"`
+	Notes           string  `json:"notes"`
+	Temperature     int     `json:"temperature"`
+	Width           float64 `json:"width"`
+	Depth           float64 `json:"depth"`
+	PH              float64 `json:"pH"`
+	DissolvedOxygen float64 `json:"dissolvedOxygen"`
+	Conductivity    float64 `json:"conductivity"`
+	ORP             float64 `json:"ORP"`
+	Discharge       float64 `json:"discharge"`
 }
 
-var idCounter int
+var idCounter = 1
 var samples = []Sample{
 	{
-		What:  "Cromwell Lake",
-		Who:   "Outlet Stream",
-		When:  "October 2013",
-		Notes: "Protected lake; within Montreal University field station",
+		Id:              0,
+		Title:           "Bear Lake Site",
+		Location:        "Bear Lake",
+		Date:            "April 26th",
+		Notes:           "Bear Lake was cool mate.",
+		Temperature:     12,
+		Width:           14.5,
+		Depth:           14.5,
+		PH:              14.5,
+		DissolvedOxygen: 14.5,
+		Conductivity:    14.5,
+		ORP:             14.5,
+		Discharge:       14.5,
 	},
 }
 
