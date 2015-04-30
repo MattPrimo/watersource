@@ -6,6 +6,30 @@
  <div layout layout-sm="column">
  <md-input-container flex>
  <label>
+ Title </label>
+ <input ng-model="sample.title" placeholder="Placeholder text">
+ </md-input-container>
+  <md-input-container flex>
+  <label>
+ Location</label>
+ <input ng-model="sample.location" placeholder="Placeholder text">
+ </md-input-container>
+  <md-input-container flex>
+  <label>
+ Date</label>
+ <input ng-model="sample.date" placeholder="Placeholder text">
+ </md-input-container>
+ </div>
+ <div layout layout-sm="column">
+  <md-input-container flex>
+  <label>
+ Notes</label>
+ <input ng-model="sample.notes" placeholder="Placeholder text">
+ </md-input-container>
+ </div>
+ <div layout layout-sm="column">
+  <md-input-container flex>
+ <label>
  Temperature (°C)</label>
  <input ng-model="sample.temperature" placeholder="Placeholder text">
  </md-input-container>
@@ -17,20 +41,22 @@
  <md-input-container flex>
  <label>
  Depth (m)</label>
- <input ng-model="theMax">
+ <input ng-model="sample.depth">
  </md-input-container>
  </div>
+  <div layout layout-sm="column">
  <md-input-container flex>
  <label>
  pH</label>
  <input style="width:187px" ng-model="sample.pH">
  </md-input-container>
- <div layout layout-sm="column">
  <md-input-container flex>
  <label>
  Dissolved Oxygen (mg/L)</label>
  <input ng-model="sample.dissolvedOxygen">
  </md-input-container>
+ </div>
+ <div layout layout-sm="column">
  <md-input-container flex>
  <label>
  Conductivity (μS/cm)</label>
