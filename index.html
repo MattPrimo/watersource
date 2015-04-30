@@ -74,7 +74,7 @@
           </h3>
           <md-input-container md-theme="input" flex>
             <label>&nbsp;</label>
-            <input ng-model="search.who" placeholder="enter search">
+            <input ng-model="search" placeholder="enter search">
           </md-input-container>
           <md-button aria-label="Search" ng-click="showSearch = !showSearch">
             <ng-md-icon icon="search"></ng-md-icon>
@@ -136,7 +136,7 @@
                     <md-card-content>
                       <h2>Favorites</h2>
                       <md-list>
-                        <md-item ng-repeat="item in activity | filter:search | orderBy:'-what'">
+                        <md-item ng-repeat="item in activity | filter:search">
                           <md-item-content>
                             <div class="md-tile-left inset" hide-sm>
                                 <user-avatar></user-avatar>
